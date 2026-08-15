@@ -608,9 +608,37 @@ String makeWebPage()
 
     html += "body{";
     html += "font-family:Arial,sans-serif;";
-    html += "background:#f2f2f2;";
     html += "margin:0;";
     html += "padding:20px;";
+    html += "min-height:100vh;\
+    background:linear-gradient(\
+      to bottom,\
+      #fff 0%,\
+      #fff 20%,\
+      #ffd36a 32%,\
+      #f28c18 48%,\
+      #d96b00 100%\
+    );\
+    position:relative;\
+    overflow-x:hidden;\
+    }\
+    body::before{\
+    content:'';\
+    position:fixed;\
+    inset:20% 0 0;\
+    pointer-events:none;\
+    background-image:\
+      radial-gradient(circle,rgba(255,255,255,.65) 0 2px,transparent 3px),\
+      radial-gradient(circle,rgba(255,255,255,.5) 0 1.5px,transparent 2.5px),\
+      radial-gradient(circle,rgba(255,255,255,.4) 0 1px,transparent 2px);\
+    background-size:97px 151px,137px 211px,71px 113px;\
+    background-position:10px 120px,50px 30px,80px 180px;\
+    animation:bubbles 12s linear infinite;\
+    opacity:.8;\
+    }\
+    @keyframes bubbles{\
+    from{transform:translateY(45px);}\
+    to{transform:translateY(-170px);}";
     html += "}";
 
     html += ".container{";
